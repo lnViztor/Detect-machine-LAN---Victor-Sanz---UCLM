@@ -69,7 +69,6 @@ class DetectMachineLan():
 		if opts.x:
 			machines = self.__scanNetworkSC(opts.ip,opts.interface)
 			for snd,rcv in machines:
-				lista.append(str.upper(rcv.sprintf("%Ether.src%")))
 				if str.upper(rcv.sprintf("%Ether.src%")) in whitelist:
 					msg='Mac find in the WhiteList '+rcv.sprintf("%Ether.src%")+' Ip: '+rcv.sprintf("%ARP.psrc%")
 					if self.verbose:
@@ -110,8 +109,7 @@ class DetectMachineLan():
 							self.__consoleMessage(msg)						
 						if self.log:
 							self.__writeLog(msg)
-
-		print(lista)
+		#Recorremos la lista con las MAC
 		for x in lista: 
 			if lista.count(x) > 1:
 				vdup=1
@@ -125,7 +123,7 @@ class DetectMachineLan():
 			if self.log:
 						self.__writeLog(msg)
 		else:
-			msg = "Duplicate MAC"
+			msg = "NO Duplicate MAC"
 			if self.verbose:
 						self.__consoleMessage(msg)						
 			if self.log:
