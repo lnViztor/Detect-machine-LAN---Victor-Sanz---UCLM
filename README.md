@@ -1,7 +1,7 @@
 # Detect-machine-LAN---Victor-Sanz---UCLM
 Repositorio para la entrega de la practica del Modulo 4 - Redes Internas- ESII UCLM
 
-Para poder probar es necesario instalar alguna dependencias como son Scapy y Nmap para Python.
+Para poder probar es necesario instalar alguna dependencias como son Scapy y Nmap para Python3.
 
 Ejemplo de uso.
 
